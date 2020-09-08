@@ -1,0 +1,5 @@
+.galleryWall {
+  margin-top: 220px;
+  position: relative;
+  perspective: 1000px;
+}

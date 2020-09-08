@@ -1,0 +1,46 @@
+:root {
+  --sizeWidth: 700px;
+  --sizeHeight: 500px;
+}
+
+.wall {
+  width: var(--sizeWidth);
+  height: var(--sizeHeight);
+  background-color: gray;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  overflow: hidden;
+}
+
+.wallContent {
+  transition: transform .5s cubic-bezier(0.28, 1.04, 1, 0.99);
+}
+
+.centerWall {
+  width: calc(var(--sizeWidth) - 100px);
+  position: absolute;
+  top: 0;
+  left: var(--sizeWidth);
+  transform-origin: left;
+  transform: rotateY(-40deg);
+}
+.centerWallContent {
+  position: relative;
+  left: calc(-100% - 100px);
+}
+
+.rightWall {
+  width: calc(var(--sizeWidth) - 100px);
+  transform-origin: right;
+  transform: rotateY(40deg);
+  position: absolute;
+  top: 0;
+  left: 1019px;
+}
+
+.rightWallContent {
+  position: relative;
+  left: calc(-200% - 100px);
+}
