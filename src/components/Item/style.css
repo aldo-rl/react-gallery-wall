@@ -1,0 +1,6 @@
+.rowWallImage {
+  display: inline-block;
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,5 +1,6 @@
 // Dependencies
 import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
 
 // Components
 import Wall from '../../components/Wall'
@@ -10,7 +11,7 @@ import { setTranslate } from '../../helpers'
 // Styles
 import './style.css'
 
-const Gallery = () => {
+const Gallery = ({ customComponent }) => {
 
   const leftWallRef = useRef(null)
   const centerWallRef = useRef(null)
@@ -54,11 +55,15 @@ const Gallery = () => {
       onTouchStart={onDragStart}
       onTouchMove={onDrag}
       onTouchEnd={onDragEnd}>
-      <Wall className='leftWall' ref={leftWallRef}/>
-      <Wall className='centerWall' ref={centerWallRef}/>
-      <Wall className='rightWall' ref={rightWallRef}/>
+      <Wall className='leftWall' ref={leftWallRef} customComponent={customComponent}/>
+      <Wall className='centerWall' ref={centerWallRef} customComponent={customComponent}/>
+      <Wall className='rightWall' ref={rightWallRef} customComponent={customComponent}/>
     </div>
   )
+}
+
+Gallery.propTypes = {
+  customComponent: PropTypes.elementType
 }
 
 export default Gallery

@@ -1,15 +1,32 @@
 // Dependencies
 import React from 'react'
+import PropTypes from 'prop-types'
+
+// Components
+import Item from '../Item'
 
 // Styles
 import './style.css'
 
-const RowWall = () => {
+const RowWall = ({ customComponent: CustomComponent}) => {
+
+  if(CustomComponent !== undefined) {
+    return (
+      <div className="rowWall">
+        <CustomComponent />
+      </div>
+    )
+  }
+
   return (
     <div className='rowWall'>
-      <img className='rowWallImage' src="https://w.wallhaven.cc/full/5w/wallhaven-5we787.jpg" alt="sd"/>
+      <Item />
     </div>
   )
+}
+
+RowWall.propTypes = {
+  customComponent: PropTypes.elementType
 }
 
 export default RowWall

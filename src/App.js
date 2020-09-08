@@ -1,6 +1,8 @@
 // Dependencies
 import React from 'react';
 
+// Components
+import Custom from './components/Custom'
 
 // Cntainers
 import Gallery from './containers/Gallery'
@@ -13,7 +15,7 @@ import './gallery.css'
 const App = () => {
   return (
     <div className="gallery">
-      <Gallery />
+      <Gallery customComponent={Custom}/>
     </div>
   );
 }

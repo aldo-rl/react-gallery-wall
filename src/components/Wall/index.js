@@ -8,12 +8,12 @@ import RowWall from '../RowWall'
 // Styles
 import './style.css'
 
-const Wall = forwardRef(({className}, ref) => {
+const Wall = forwardRef(({className, customComponent}, ref) => {
   return (
     <div className={`wall ${className}`}>
       <div className={`wallContent ${className}Content`} ref={ref}>
-        <RowWall />
-        <RowWall />
+        <RowWall customComponent={customComponent}/>
+        <RowWall customComponent={customComponent}/>
       </div>
     </div>
   )
@@ -21,6 +21,7 @@ const Wall = forwardRef(({className}, ref) => {
 
 Wall.propTypes = {
   className: PropTypes.string.isRequired,
+  customComponent: PropTypes.elementType,
 }
 
 export default Wall
