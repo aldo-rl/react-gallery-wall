@@ -1,6 +1,9 @@
+.itemWall {
+  height: 100%;
+}
 .rowWallImage {
   display: inline-block;
-  width: 200px;
+  width: auto;
   height: 100%;
   object-fit: cover;
 }

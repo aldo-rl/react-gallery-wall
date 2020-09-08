@@ -15,7 +15,7 @@ import './gallery.css'
 const App = () => {
   return (
     <div className="gallery">
-      <Gallery customComponent={Custom}/>
+      <Gallery />
     </div>
   );
 }

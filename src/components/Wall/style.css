@@ -1,20 +1,27 @@
 :root {
   --sizeWidth: 700px;
   --sizeHeight: 500px;
+  --padding: 50px;
+  --gap: 50px;
+  --rowHeight: calc(var(--sizeHeight) / 2 - (var(--padding) + (var(--gap) /2)));
 }
 
 .wall {
   width: var(--sizeWidth);
   height: var(--sizeHeight);
   background-color: gray;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
   overflow: hidden;
 }
 
 .wallContent {
+  box-sizing: border-box;
+  height: var(--sizeHeight);
+  padding: var(--padding) 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, var(--rowHeight));
+  gap: var(--gap);
+  align-items: center;
   transition: transform .5s cubic-bezier(0.28, 1.04, 1, 0.99);
 }
 

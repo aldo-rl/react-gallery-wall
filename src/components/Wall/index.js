@@ -12,8 +12,8 @@ const Wall = forwardRef(({className, customComponent}, ref) => {
   return (
     <div className={`wall ${className}`}>
       <div className={`wallContent ${className}Content`} ref={ref}>
-        <RowWall customComponent={customComponent}/>
-        <RowWall customComponent={customComponent}/>
+        <RowWall className={'Up'}  customComponent={customComponent}/>
+        <RowWall className={'Down'} customComponent={customComponent}/>
       </div>
     </div>
   )
